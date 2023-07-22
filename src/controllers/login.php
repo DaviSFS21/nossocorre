@@ -3,14 +3,13 @@
     na variável $_SESSION. Caso contrário, dará senha ou usuários incorretos e o usuário deve tentar novamente. */
     if (isset($_POST['email'])) {
         $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $cripto = sha1($senha);
+        $senha = sha1($_POST['senha']);
 
         //Conectando com o banco para fazer a consulta do usuario
         require("../assets/db/connect.php");
 
         //Pesquisa de usuario e senha
-        $result_user = mysqli_query($conexao, "SELECT * FROM `usuario` WHERE `email` = '$email' AND `senha` = '$cripto'");
+        $result_user = mysqli_query($conexao, "SELECT * FROM `usuario` WHERE `email` = '$email' AND `senha` = '$senha'");
 
         //tranformando em numero o resultado da pesquisa
         $numero_result = mysqli_num_rows($result_user);
@@ -24,11 +23,13 @@
             $_SESSION['cpf'] = $user[2];
             $_SESSION['data_nasc'] = $user[3];
             $_SESSION['email'] = $user[4];
+            $_SESSION['tel'] = $user[6];
             $_SESSION['cep'] = $user[7];
             $_SESSION['endereco'] = $user[8];
-            $_SESSION['cidade'] = $user[9];
-            $_SESSION['estado'] = $user[10];
-            $_SESSION['adm_check'] = $user[11];
+            $_SESSION['bairro'] = $user[9];
+            $_SESSION['cidade'] = $user[10];
+            $_SESSION['estado'] = $user[11];
+            $_SESSION['adm_check'] = $user[12];
             ?>
                 <script>
                     alert("Login com sucesso!");
