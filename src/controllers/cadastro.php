@@ -1,11 +1,11 @@
 <?php
-    if(isset($_POST['email'])){
+    if(isset($_POST['c_email'])){
         //Estabelecendo conexão para realizar a busca de um perfil com dados idênticos
         require '../assets/db/connect.php';
 
-        $cpf = $_POST['cpf'];
-        $email = $_POST['email'];
-        $tel = $_POST['tel'];
+        $cpf = $_POST['c_cpf'];
+        $email = $_POST['c_email'];
+        $tel = $_POST['c_tel'];
 
         //tranformando em numero o resultado da pesquisa
         $verif_cpf = mysqli_num_rows(mysqli_query($conexao, "SELECT * FROM `usuario` WHERE `cpf` = '$cpf'"));

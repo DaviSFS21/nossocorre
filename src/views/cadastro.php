@@ -15,12 +15,12 @@
     <!-- Formulário para cadastro do usuário -->
     <form action="" method="POST">
         nome: <input type="text" name="nome" maxlength="30" required><br><br>
-        cpf: <input type="text" name="cpf" onkeypress="$(this).mask('000.000.000-00');" maxlength="15" required><br><br>
+        cpf: <input type="text" name="c_cpf" onkeypress="$(this).mask('000.000.000-00');" maxlength="15" required><br><br>
         data de nascimento: <input type="date" name="data_nasc" pattern="YYYY-MM-DD" required><br><br>
-        email: <input type="email" name="email" maxlength="35" required><br><br>
+        email: <input type="email" name="c_email" maxlength="35" required><br><br>
         senha: <input type="password" name="senha" id="senha" oninput="checkSenha()" minlength="6" maxlength="20" required><br><br>
         repetir senha: <input type="password" name="repSenha" id="repSenha" oninput="checkSenha()" minlength="6" maxlength="20" required><br><br>
-        telefone: <input type="text" name="tel" onkeypress="$(this).mask('(00)00000-0000');" maxlength="15" required><br><br>
+        telefone: <input type="text" name="c_tel" onkeypress="$(this).mask('(00)00000-0000');" maxlength="15" required><br><br>
         CEP: <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
                onblur="pesquisacep(this.value);" /><br><br>
         Rua: <input name="rua" type="text" id="rua" size="60" /><br><br>
