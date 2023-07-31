@@ -15,7 +15,7 @@
         mysqli_close($conexao);
     } else {
         ?>
-<!--             <script>
+             <!--<script>
                 alert("Usuário não encontrado...");
                 window.location.replace("index.php");
             </script> -->

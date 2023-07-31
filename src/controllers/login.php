@@ -33,7 +33,7 @@
             ?>
                 <script>
                     alert("Login com sucesso!");
-                    window.location.replace("index.php");
+                    window.location.replace("../controllers/verif_session.php");
                 </script>
             <?php
         }else{

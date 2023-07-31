@@ -21,7 +21,6 @@
             ?>
                 <script>
                     alert("Já cadastrados: <?php echo trim($total_rep, "; "); ?>");
-                </script>
             <?php
         }else{
             $nome = $_POST['nome'];
