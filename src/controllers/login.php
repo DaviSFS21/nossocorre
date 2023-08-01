@@ -19,6 +19,7 @@
 
             session_start();
             /* Iniciando a sessão e preenchendo variável com informações necessárias de acordo com o registro no BD. */
+            $_SESSION['id'] = $user[0];
             $_SESSION['nome'] = $user[1];
             $_SESSION['cpf'] = $user[2];
             $_SESSION['data_nasc'] = $user[3];
@@ -33,7 +34,7 @@
             ?>
                 <script>
                     alert("Login com sucesso!");
-                    window.location.replace("../controllers/verif_session.php");
+                    window.location.replace("../views/perfil.php");
                 </script>
             <?php
         }else{
