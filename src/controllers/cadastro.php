@@ -39,7 +39,7 @@
             ?>
                 <script>
                     alert("Cadastrado com sucesso!");
-                    window.location.replace("perfil.php");
+                    window.location.replace("../views/perfil.php?id=<?php echo $_SESSION['id']; ?>");
                 </script>
             <?php
         }
