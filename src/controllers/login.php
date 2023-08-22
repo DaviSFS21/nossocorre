@@ -34,7 +34,7 @@
             ?>
                 <script>
                     alert("Login com sucesso!");
-                    window.location.replace("../views/perfil.php");
+                    window.location.replace("../views/perfil.php?id=<?php echo $_SESSION['id']; ?>");
                 </script>
             <?php
         }else{

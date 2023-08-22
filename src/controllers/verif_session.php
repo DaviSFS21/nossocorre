@@ -8,5 +8,7 @@
                 window.location.replace("../views/login.php");
             </script>
         <?php
+        
+        exit();
     }
 ?>

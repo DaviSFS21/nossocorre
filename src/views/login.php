@@ -16,5 +16,7 @@
         senha: <input type="password" name="senha" minlength="6" maxlength="20" required><br><br>
         <button type="submit">enviar</button>
     </form>
+    <br><br>
+    <a href="cadastro.php">Cadastrar</a>
 </body>
 </html>

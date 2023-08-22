@@ -10,7 +10,7 @@
         $senha_antiga = sha1($_POST['a_senha']);
         $verif_senha = mysqli_num_rows(mysqli_query($conexao, "SELECT * FROM `usuario` WHERE `id` = '$id' AND `senha` = '$senha_antiga'"));
 
-        if($verif_senha == 0){
+        if($verif_senha == 1){
             $cpf = $_POST['a_cpf'];
             $email = $_POST['a_email'];
             $tel = $_POST['a_tel'];

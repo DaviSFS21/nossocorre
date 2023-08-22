@@ -21,6 +21,7 @@
             ?>
                 <script>
                     alert("Já cadastrados: <?php echo trim($total_rep, "; "); ?>");
+                </script>
             <?php
         }else{
             $nome = $_POST['nome'];
@@ -35,6 +36,12 @@
             mysqli_query($conexao, "INSERT INTO 
             `usuario`(`nome`, `cpf`, `data_nasc`, `email`, `senha`, `tel`, `cep`, `rua`, `bairro`, `cidade`, `estado`,`adm_check`) 
             VALUES ('$nome','$cpf','$data_nasc','$email','$senha','$tel','$cep','$rua','$bairro','$cidade','$estado',0)");
+            ?>
+                <script>
+                    alert("Cadastrado com sucesso!");
+                    window.location.replace("perfil.php");
+                </script>
+            <?php
         }
 
         mysqli_close($conexao);

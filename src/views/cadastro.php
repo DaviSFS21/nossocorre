@@ -29,7 +29,8 @@
         UF: <input name="estado" type="text" id="uf"><br><br>
         <button id="confirmButton" type="submit" disabled>cadastrar</button>
     </form>
-    
+    <a href="login.php">Login</a>
+
     <!-- JavaScript -->
     <script src="../js/script.js" text="text/javascript"></script>
     <!--  Jquery -->
