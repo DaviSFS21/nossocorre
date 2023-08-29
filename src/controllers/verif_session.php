@@ -9,6 +9,6 @@
             </script>
         <?php
         
-        exit();
+        die();
     }
 ?>

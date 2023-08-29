@@ -1,6 +1,6 @@
 <?php
     require_once "../controllers/verif_session.php";
-    require_once "../controllers/eventos/criar_evento.php";
+    require_once "../controllers/criar_evento.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
     <h1>Criar evento</h1>
 
     <form action="" method="POST">
-        Nome do evento: <input type="text" name="nome_ev" maxlength="100" required><br><br>
+        Nome do evento: <input type="text" name="n_nome_ev" maxlength="100" required><br><br>
         Descrição: <textarea type="text" name="n_descricao" maxlength="1200" rows="6" cols="26"></textarea><br><br>
         Data de Início: <input type="date" name="n_data_inicio" pattern="YYYY-MM-DD" required><br><br>
         Data de Término: <input type="date" name="n_data_fim" pattern="YYYY-MM-DD" required><br><br>
