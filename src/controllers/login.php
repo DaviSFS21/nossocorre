@@ -24,6 +24,7 @@
             $_SESSION['cpf'] = $user[2];
             $_SESSION['data_nasc'] = $user[3];
             $_SESSION['email'] = $user[4];
+            $_SESSION['senha'] = $user[5];
             $_SESSION['tel'] = $user[6];
             $_SESSION['cep'] = $user[7];
             $_SESSION['endereco'] = $user[8];

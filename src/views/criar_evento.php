@@ -15,13 +15,15 @@
 <body>
     <h1>Criar evento</h1>
 
+    <h2>Olá, <?php echo "Olá, <a href='perfil.php?id=".$_SESSION['id']."'>".$_SESSION['nome']."</a>"; ?></h2>
+
     <form action="" method="POST">
         Nome do evento: <input type="text" name="n_nome_ev" maxlength="100" required><br><br>
         Descrição: <textarea type="text" name="n_descricao" maxlength="1200" rows="6" cols="26"></textarea><br><br>
-        Data de Início: <input type="date" name="n_data_inicio" pattern="YYYY-MM-DD" required><br><br>
-        Data de Término: <input type="date" name="n_data_fim" pattern="YYYY-MM-DD" required><br><br>
+        Data de Início: <input type="date" name="n_data_inicio" pattern="YYYY-MM-DD" required><input type="time" name="n_hora_inicio"><br><br>
+        Data de Término: <input type="date" name="n_data_fim" pattern="YYYY-MM-DD" required><input type="time" name="n_hora_fim"><br><br>
         CEP: <input name="n_cep" type="text" id="cep" value="" size="10" maxlength="9"
-               onblur="pesquisacep(this.value);" /><br><br>
+               onblur="pesquisacep(this.value);"><br><br>
         Rua: <input name="n_rua" type="text" id="rua" size="60" required><br><br>
         Bairro: <input name="n_bairro" type="text" id="bairro" required><br><br>
         Cidade: <input name="n_cidade" type="text" id="cidade" required><br><br>
