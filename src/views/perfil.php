@@ -12,47 +12,40 @@
 </head>
 <body>
     <h1><?php echo $_SESSION['nome'] ?></h1>
-    <?php
-        if($_SESSION['id'] == $_SESSION['id']){
-            echo '
+    <a class="link" href="criar_evento.php">Criar um evento</a><br>
+    <a class="link" href="ver_evento.php">Ver seus eventos</a><br>
     <a class="link" href="editar_perfil.php">Editar perfil</a><br>
-    <button class="link" onclick="ctzExcluir()">Excluir perfil</button><br>
+    <a class="link" href="../controllers/excluir_perfil.php" onclick="ctzExcluir()">Excluir perfil</a><br>
     <a class="link" href="../controllers/exit.php">Sair</a>
-            ';
+
+    <br><br><br>
+
+    <h3>Eventos</h3>
+    <?php
+        require_once "../assets/db/connect.php";
+
+        $result_eventos = mysqli_query($conexao, "SELECT * FROM `eventos` WHERE `usuario_id` = '" . $_SESSION['id'] . "'");
+        $numero_result = mysqli_num_rows($result_eventos);
+
+        if($numero_result != 0){
+            for($i = 1; $i <= $numero_result; $i++){
+                $vetor_eventos = mysqli_fetch_array($result_eventos);
+
+                echo "
+    <div>
+        <img src=" . $vetor_eventos[10] . " height=250px> 
+        <p>ID: " . $vetor_eventos[0] . "</p>
+        <p>Nome do evento: " . $vetor_eventos[1] . "</p>
+        <p>Descrição: " . $vetor_eventos[2] . "</p>
+        <p>Início: " . $vetor_eventos[3] . "</p>
+        <a href='../controllers/excluir_evento.php?id_evento=" . $vetor_eventos[0] . "' onclick='ctzExcluir()'>Excluir o evento?</a>
+    </div>
+                ";
+            }
         }
+
     ?>
 
-    <script>
-        function ctzExcluir() {
-            // Cria um array com os caracteres permitidos
-            const caracteres = [
-                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-                'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-            ];
-
-            // Gera uma sequência de 6 dígitos
-            const sequencia = [];
-            for (let i = 0; i < 6; i++) {
-                sequencia.push(caracteres[Math.floor(Math.random() * caracteres.length)]);
-            }
-            
-            // Remove as vírgulas
-            sequenciaArmazenada = sequencia.join('').replace(',', '');
-
-            // Pega a senha digitada pelo usuário
-            var sequenciaDigitada = prompt("Digite a sequência abaixo para confirmar a exclusão da sua conta: "+ sequenciaArmazenada);
-
-            // Verifica se as senhas são iguais
-            if (sequenciaDigitada === sequenciaArmazenada) {
-                // As senhas são iguais, então exclui a conta
-                alert("Sua conta foi excluída com sucesso!");
-                window.location.replace("../controllers/excluir_perfil.php");
-            } else {
-                // As senhas não são iguais, então exibe uma mensagem de erro
-                alert("Senha incorreta!");
-            }
-        }
-    </script>
+    <script src="../js/confirmar.js"></script>
 </body>
 </html>

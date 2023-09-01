@@ -58,7 +58,7 @@
             $path_img = $pasta . $novoNomeImg . "." . $extensaoImg;    
             move_uploaded_file($img_evento['tmp_name'], $path_img);
         }else{
-            $path_img = "../assets/img/img_eventos/generico.jpg";
+            $path_img = "../assets/img/img_eventos/generico.png";
         }
 
         mysqli_query($conexao, "INSERT INTO 
