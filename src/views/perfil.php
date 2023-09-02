@@ -15,7 +15,7 @@
     <a class="link" href="criar_evento.php">Criar um evento</a><br>
     <a class="link" href="ver_evento.php">Ver seus eventos</a><br>
     <a class="link" href="editar_perfil.php">Editar perfil</a><br>
-    <a class="link" href="../controllers/excluir_perfil.php" onclick="ctzExcluir()">Excluir perfil</a><br>
+    <a class="link" href="../controllers/excluir_perfil.php">Excluir perfil</a><br>
     <a class="link" href="../controllers/exit.php">Sair</a>
 
     <br><br><br>
@@ -38,14 +38,14 @@
         <p>Nome do evento: " . $vetor_eventos[1] . "</p>
         <p>Descrição: " . $vetor_eventos[2] . "</p>
         <p>Início: " . $vetor_eventos[3] . "</p>
-        <a href='../controllers/excluir_evento.php?id_evento=" . $vetor_eventos[0] . "' onclick='ctzExcluir()'>Excluir o evento?</a>
+        <a href='../controllers/excluir_evento.php?id_evento=" . $vetor_eventos[0] . "'>Excluir o evento?</a>
     </div>
+    <hr>
                 ";
             }
         }
 
     ?>
 
-    <script src="../js/confirmar.js"></script>
 </body>
 </html>

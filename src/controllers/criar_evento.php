@@ -1,4 +1,7 @@
 <?php
+
+    require_once "../controllers/verif_session.php";
+
     if(isset($_POST['n_nome_ev'])){
         require '../assets/db/connect.php';
         
@@ -11,6 +14,8 @@
         $bairro = $_POST["n_bairro"];
         $cidade = $_POST["n_cidade"];
         $estado = $_POST["n_estado"];
+        
+        echo "sim";
 
         if(isset($_FILES["n_img"])){
 
@@ -57,8 +62,11 @@
             /* Concatenando o novo caminho da imagem. */
             $path_img = $pasta . $novoNomeImg . "." . $extensaoImg;    
             move_uploaded_file($img_evento['tmp_name'], $path_img);
+            echo $path_img;
         }else{
             $path_img = "../assets/img/img_eventos/generico.png";
+            echo $path_img;
+
         }
 
         mysqli_query($conexao, "INSERT INTO 

@@ -15,9 +15,9 @@
 <body>
     <h1>Criar evento</h1>
 
-    <h2>Olá, <?php echo "Olá, <a href='perfil.php?id=".$_SESSION['id']."'>".$_SESSION['nome']."</a>"; ?></h2>
+    <h2><?php echo "Olá, <a href='perfil.php?id=".$_SESSION['id']."'>".$_SESSION['nome']."</a>"; ?></h2>
 
-    <form action="" method="POST">
+    <form enctype="multipart/form-data" action="" method="POST">
         Nome do evento: <input type="text" name="n_nome_ev" maxlength="100" required><br><br>
         Descrição: <textarea type="text" name="n_descricao" maxlength="1200" rows="6" cols="26"></textarea><br><br>
         Data de Início: <input type="date" name="n_data_inicio" pattern="YYYY-MM-DD" required><input type="time" name="n_hora_inicio"><br><br>
