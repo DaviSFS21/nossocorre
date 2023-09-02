@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Ago-2023 às 00:38
+-- Tempo de geração: 02-Set-2023 às 02:44
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -41,6 +41,14 @@ CREATE TABLE `eventos` (
   `path_img` varchar(255) NOT NULL,
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `eventos`
+--
+
+INSERT INTO `eventos` (`id`, `nome_ev`, `descricao`, `data_inicio`, `data_fim`, `cep`, `rua`, `bairro`, `cidade`, `estado`, `path_img`, `usuario_id`) VALUES
+(1, 'Festa no Putim', 'sim', '2020-09-16 00:00:00', '2034-03-12 00:00:00', '12228000', 'Avenida João Rodolfo Castelli', 'Putim', 'São José dos Campos', 'SP', '../assets/img/img_eventos/generico.png', 4),
+(17, 'sim', 'sim tb', '2222-02-12 00:00:00', '2222-12-12 00:00:00', '12232-00', 'Avenida Cidade Jardim', 'Jardim Portugal', 'São José dos Campos', 'SP', '../assets/img/img_eventos/64f26f301af21.png', 4);
 
 -- --------------------------------------------------------
 
@@ -85,8 +93,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `cpf`, `data_nasc`, `email`, `senha`, `tel`, `cep`, `rua`, `bairro`, `cidade`, `estado`, `adm_check`) VALUES
-(4, 'Davi', '123.456.789-10', '2005-10-21', 'davi@email.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '(12)12345-6789', '01001000', 'Praça da Sé', 'Sé', 'São Paulo', 'São Paulo', 0),
-(5, 'Lucas Manuel Francisco Porto', '696.094.969-62', '1985-02-15', 'lucas_porto@ravi.com.br', '7c4a8d09ca3762af61e59520943dc26494f8941b', '(81) 99378-208', '52165-43', 'Rua Júlia Maria Rocha Bezerra', 'Passarinho', 'Recife', 'PE', 0);
+(4, 'Davi', '123.456.789-10', '2005-10-21', 'davi@email.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '(12)12345-6789', '01001000', 'Praça da Sé', 'Sé', 'São Paulo', 'São Paulo', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -120,7 +127,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `musica`
@@ -132,7 +139,7 @@ ALTER TABLE `musica`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para despejos de tabelas
