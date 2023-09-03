@@ -14,13 +14,14 @@
         $verif_geral = $verif_cpf + $verif_email + $verif_tel;
 
         if($verif_geral > 0){
-            if ($verif_cpf == 1) $total_rep = "CPF; ";
+            $total_rep = "Já cadastrados: ";
+            if ($verif_cpf == 1) $total_rep = $total_rep . "CPF; ";
             if ($verif_email == 1) $total_rep = $total_rep . "Email; ";
             if ($verif_tel == 1) $total_rep = $total_rep . "Telefone; ";
 
             ?>
                 <script>
-                    alert("Já cadastrados: <?php echo trim($total_rep, "; "); ?>");
+                    alert("<?php echo trim($total_rep, "; "); ?>");
                 </script>
             <?php
         }else{

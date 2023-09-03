@@ -62,11 +62,9 @@
             /* Concatenando o novo caminho da imagem. */
             $path_img = $pasta . $novoNomeImg . "." . $extensaoImg;    
             move_uploaded_file($img_evento['tmp_name'], $path_img);
-            echo $path_img;
+
         }else{
             $path_img = "../assets/img/img_eventos/generico.png";
-            echo $path_img;
-
         }
 
         mysqli_query($conexao, "INSERT INTO 
