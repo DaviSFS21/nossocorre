@@ -5,5 +5,5 @@
     session_destroy();
 ?>
 <script>
-    history.back();
+    window.location.replace("../views/index.php");
 </script>
