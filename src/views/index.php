@@ -18,6 +18,5 @@
 <body>
     <h1><?php echo $user ?></h1>
     <br><br>
-    <h3><a href="criar_evento.php">Criar evento</a></h3>
 </body>
 </html>

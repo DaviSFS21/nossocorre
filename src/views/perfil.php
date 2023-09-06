@@ -39,7 +39,7 @@
         <p>Descrição: " . $vetor_eventos[2] . "</p>
         <p>Início: " . $vetor_eventos[3] . "</p>
         <a href='../views/editar_evento.php?id_evento=" . $vetor_eventos[0] . "'>Editar evento</a>
-        <a href='../controllers/excluir_evento.php?id_evento=" . $vetor_eventos[0] . "'>Excluir evento</a>
+        <a href='../controllers/excluir_evento.php?id_evento=" . $vetor_eventos[0] . "&url_img=" . $vetor_eventos[10] . "'>Excluir evento</a>
     </div>
     <hr>
                 ";
