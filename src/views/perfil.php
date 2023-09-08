@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/dark.css">
-    <title>Atualizar perfil</title>
+    <title>Meu perfil</title>
 </head>
 <body>
     <h1><?php echo $_SESSION['nome'] ?></h1>
