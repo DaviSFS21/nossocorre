@@ -1,4 +1,21 @@
 <?php
+    require_once "../assets/db/connect.php";
+
+    if(isset($_GET['id_evento'])){
+        $result_evento = mysqli_query($conexao, "SELECT * FROM `eventos` WHERE `id` = " . $_GET['id_evento']);
+        $numero_result = mysqli_num_rows($result_evento);
+        if($numero_result == 1){
+            $edit_evento = mysqli_fetch_array($result_evento);
+        }
+    }else{
+        ?>
+            <script>
+                alert("Este evento não foi encontrado...");
+                window.location.replace("index.php"); 
+            </script>
+        <?php
+    }
+
     if(isset($_POST['a_nome_ev'])){
         if($_SESSION['id'] == $edit_evento[11]){
             $id_evento = $_GET['id_evento'];
@@ -11,9 +28,8 @@
             $bairro = $_POST['a_bairro'];
             $cidade = $_POST['a_cidade'];
             $estado = $_POST['a_estado'];
-            $path_img = $_FILES['a_img'];
 
-            if(isset($_FILES["a_img"])){
+            if(isset($_POST["confirm_img"])){
 
                 $img_evento = $_FILES['a_img'];
     
@@ -80,5 +96,5 @@
                 </script>
             <?php
         }
-}
+    }
 ?>

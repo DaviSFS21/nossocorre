@@ -1,13 +1,19 @@
-const inputTitulo = document.querySelector("input[name=n_titulo]");
-const titulo = document.cookie.split(";").find(cookie => cookie.startsWith("titulo="));
+const titulo = Cookies.get('titulo');
+document.querySelector("input[name=n_titulo]").value = Cookies.get('titulo') || "";
 
-if (titulo) {
-inputTitulo.value = titulo.split("=")[1];
-}
+const subtitulo = Cookies.get('subtitulo');
+document.querySelector("input[name=n_subtitulo]").value = Cookies.get('subtitulo') || "";
+
+const texto = Cookies.get('texto');
+document.querySelector("textarea").innerHTML = Cookies.get('texto') || "";
 
 function salvarArtigo(){
-    var inputTitulo = document.querySelector("input[name=n_titulo]");
-    var titulo = inputTitulo.value;
-
-    document.cookie = "titulo=" + titulo;
+    var nTitulo = document.querySelector("input[name=n_titulo]").value;
+    Cookies.set('titulo', nTitulo, { expires: 5 });
+    
+    var nSubitulo = document.querySelector("input[name=n_subtitulo]").value;
+    Cookies.set('subtitulo', nSubitulo, { expires: 5 });
+    
+    var nTexto = document.querySelector("#n_texto").value;
+    Cookies.set('texto', nTexto, { expires: 5 });
 }
