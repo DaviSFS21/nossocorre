@@ -1,11 +1,11 @@
 <?php
     require_once "../assets/db/connect.php";
 
-    if(isset($_GET['id_evento'])){
-        $result_evento = mysqli_query($conexao, "SELECT * FROM `eventos` WHERE `id` = " . $_GET['id_evento']);
-        $numero_result = mysqli_num_rows($result_evento);
+    if(isset($_GET['id_artigo'])){
+        $result_artigo = mysqli_query($conexao, "SELECT * FROM `artigos` WHERE `id` = " . $_GET['id_artigo']);
+        $numero_result = mysqli_num_rows($result_artigo);
         if($numero_result == 1){
-            $edit_evento = mysqli_fetch_array($result_evento);
+            $edit_artigo = mysqli_fetch_array($result_artigo);
         }
     }else{
         ?>
@@ -16,31 +16,25 @@
         <?php
     }
 
-    if(isset($_POST['a_nome_ev'])){
-        if($_SESSION['id'] == $edit_evento[11]){
-            $id_evento = $_GET['id_evento'];
-            $nome_evento = $_POST['a_nome_ev'];
-            $descricao = $_POST['a_descricao'];
-            $data_inicio = $_POST['a_data_inicio'];
-            $data_fim = $_POST['a_data_fim'];
-            $cep = $_POST['a_cep'];
-            $rua = $_POST['a_rua'];
-            $bairro = $_POST['a_bairro'];
-            $cidade = $_POST['a_cidade'];
-            $estado = $_POST['a_estado'];
+    if(isset($_POST['a_titulo'])){
+        if($_SESSION['id'] == $edit_artigo[6]){
+            $id_artigo = $_GET['id_artigo'];
+            $titulo = $_POST['a_titulo'];
+            $subtitulo = $_POST['a_subtitulo'];
+            $texto = $_POST['a_texto'];
 
             if(isset($_POST["a_img"])){
 
-                $img_evento = $_FILES['a_img'];
+                $img_artigo = $_FILES['a_img'];
     
                 /* Declaração do novo caminho da imagem e criação do uniqid() para mudar o local da imagem, 
                 do local temporário ao source do servidor */
-                $pasta = "../assets/img/img_eventos/";
+                $pasta = "../assets/img/img_artigos/";
                 $novoNomeImg = uniqid();
-                $extensaoImg = strtolower(pathinfo($img_evento['name'], PATHINFO_EXTENSION));
+                $extensaoImg = strtolower(pathinfo($img_artigo['name'], PATHINFO_EXTENSION));
         
                 /* Condições caso o upload sofra um erro, caso a extensão seja a errada, ou, caso a imagem seja muito pesada */
-                if($img_evento['error']){
+                if($img_artigo['error']){
         
                     ?>
                     <script>
@@ -61,7 +55,7 @@
                     die();
                 }
         
-                if($img_evento['size'] > 4194304){
+                if($img_artigo['size'] > 4194304){
                     ?>
                     <script>
                         alert("Arquivo maior que 4MB...");
@@ -70,38 +64,32 @@
                     <?php
                     die();
                 }
+
+                unlink($_GET['url_img']);
     
                 /* Concatenando o novo caminho da imagem. */
                 $path_img = $pasta . $novoNomeImg . "." . $extensaoImg;    
-                move_uploaded_file($img_evento['tmp_name'], $path_img);
+                move_uploaded_file($img_artigo['tmp_name'], $path_img);
 
-                mysqli_query($conexao, "UPDATE `eventos` SET `path_img`='$path_img' WHERE `id` = $id_evento");
+                mysqli_query($conexao, "UPDATE `artigos` SET `path_img`='$path_img' WHERE `id` = $id_artigo");
             }
 
-            mysqli_query($conexao, "UPDATE `eventos` SET `nome_ev`='$nome_evento',`descricao`='$descricao',`data_inicio`='$data_inicio',
-            `data_fim`='$data_fim',`cep`='$cep',`rua`='$rua',`bairro`='bairro',`cidade`='$cidade',`estado`='$estado' 
-            WHERE `id` = $id_evento");
+            mysqli_query($conexao, "UPDATE `artigos` SET `titulo`='$titulo',`subtitulo`='$subtitulo',`texto`='$texto'
+            WHERE `id` = $id_artigo");
 
             ?>
                 <script>
-                    alert("Evento atualizado!");
+                    alert("Artigo atualizado!");
                     window.location.replace("perfil.php");
                 </script>
             <?php
         }else{
             ?>
                 <script>
-                    alert("Este evento não existe...");
+                    alert("Este Artigo não existe...");
                     window.location.replace("perfil.php");
                 </script>
             <?php
         }
-    }else{
-        ?>
-        <script>
-            alert("Este evento não existe...");
-            window.location.replace("../views/perfil.php");
-        </script>
-        <?php
     }
 ?>

@@ -16,7 +16,8 @@
         Subtítulo: <input type="text" name="n_subtitulo" maxlength="300" oninput="salvarArtigo()"><br>
         Texto: <br><textarea name="n_texto" id="n_texto" cols="90" rows="20" maxlength="3000" oninput="salvarArtigo()"></textarea><br>
         Imagem: <input type="file" name="n_img"><br>
-        <button type="submit">Enviar</button>
+        <a onclick="removerCookies()">Recomeçar</a>
+        <button type="submit" onclick="removerCookies()">Enviar</button>
     </form>
 
     <p>Não se preocupe em perder seu progresso!<br>

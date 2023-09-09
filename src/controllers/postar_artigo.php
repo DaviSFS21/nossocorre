@@ -8,7 +8,6 @@
         $titulo = $_POST["n_titulo"];
         $subtitulo = $_POST["n_subtitulo"];
         $texto = $_POST["n_texto"];
-        $data = $_POST["n_data"];
         
         echo "sim";
 

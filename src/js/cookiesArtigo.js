@@ -17,3 +17,11 @@ function salvarArtigo(){
     var nTexto = document.querySelector("#n_texto").value;
     Cookies.set('texto', nTexto, { expires: 5 });
 }
+
+function removerCookies(){
+    Cookies.remove('titulo');
+    Cookies.remove('subtitulo');
+    Cookies.remove('texto');
+
+    location.reload()
+}
