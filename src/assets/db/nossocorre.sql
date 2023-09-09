@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Set-2023 às 02:44
+-- Tempo de geração: 09-Set-2023 às 17:17
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -24,6 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `artigos`
+--
+
+CREATE TABLE `artigos` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
+  `subtitulo` varchar(300) NOT NULL,
+  `texto` text NOT NULL,
+  `path_img` varchar(255) NOT NULL,
+  `data` date NOT NULL,
+  `usuario_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `artigos`
+--
+
+INSERT INTO `artigos` (`id`, `titulo`, `subtitulo`, `texto`, `path_img`, `data`, `usuario_id`) VALUES
+(7, 'Sim', 'Positivo', 'aaaaa', '../assets/img/img_artigos/64fc8a91c5235.jpg', '2023-09-09', 4),
+(8, 'Sim2', 'Positivo2', 'aaaaa2', '../assets/img/img_artigos/64fc8afa26819.png', '2023-09-09', 4);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `eventos`
 --
 
@@ -31,8 +55,8 @@ CREATE TABLE `eventos` (
   `id` int(11) NOT NULL,
   `nome_ev` varchar(100) NOT NULL,
   `descricao` varchar(1200) NOT NULL,
-  `data_inicio` datetime NOT NULL,
-  `data_fim` datetime NOT NULL,
+  `data_inicio` date NOT NULL,
+  `data_fim` date NOT NULL,
   `cep` varchar(8) NOT NULL,
   `rua` varchar(100) NOT NULL,
   `bairro` varchar(40) NOT NULL,
@@ -47,8 +71,7 @@ CREATE TABLE `eventos` (
 --
 
 INSERT INTO `eventos` (`id`, `nome_ev`, `descricao`, `data_inicio`, `data_fim`, `cep`, `rua`, `bairro`, `cidade`, `estado`, `path_img`, `usuario_id`) VALUES
-(1, 'Festa no Putim', 'sim', '2020-09-16 00:00:00', '2034-03-12 00:00:00', '12228000', 'Avenida João Rodolfo Castelli', 'Putim', 'São José dos Campos', 'SP', '../assets/img/img_eventos/generico.png', 4),
-(17, 'sim', 'sim tb', '2222-02-12 00:00:00', '2222-12-12 00:00:00', '12232-00', 'Avenida Cidade Jardim', 'Jardim Portugal', 'São José dos Campos', 'SP', '../assets/img/img_eventos/64f26f301af21.png', 4);
+(1, 'Festa no Putim', 'sim', '2020-12-31', '2034-03-12', '12228000', 'Avenida João Rodolfo Castelli', 'bairro', 'São José dos Campos', 'SP', '../assets/img/img_eventos/generico.png', 4);
 
 -- --------------------------------------------------------
 
@@ -100,6 +123,13 @@ INSERT INTO `usuario` (`id`, `nome`, `cpf`, `data_nasc`, `email`, `senha`, `tel`
 --
 
 --
+-- Índices para tabela `artigos`
+--
+ALTER TABLE `artigos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `usuario_id` (`usuario_id`);
+
+--
 -- Índices para tabela `eventos`
 --
 ALTER TABLE `eventos`
@@ -124,6 +154,12 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de tabela `artigos`
+--
+ALTER TABLE `artigos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de tabela `eventos`
 --
 ALTER TABLE `eventos`
@@ -144,6 +180,12 @@ ALTER TABLE `usuario`
 --
 -- Restrições para despejos de tabelas
 --
+
+--
+-- Limitadores para a tabela `artigos`
+--
+ALTER TABLE `artigos`
+  ADD CONSTRAINT `artigos_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
 
 --
 -- Limitadores para a tabela `eventos`
