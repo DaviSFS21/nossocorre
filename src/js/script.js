@@ -21,3 +21,18 @@ function checkSenha() {
         }
     }
 }
+
+function compararDatas() {
+    var dataInicio = document.getElementById("data_inicio").value;
+    var dataFim = document.getElementById("data_fim");
+
+    console.log(dataInicio);
+
+    if(dataInicio != ""){
+        dataFim.disabled = false;
+        dataFim.setAttribute("min", dataInicio);
+    }else{
+        dataFim.disabled = true;
+        dataFim.setAttribute("min", "Y-m-d");
+    }
+}

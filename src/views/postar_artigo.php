@@ -11,11 +11,14 @@
     <title>Postar artigo</title>
 </head>
 <body>
-    <form action="" method="POST">
-        Título: <input type="text" name="titulo" maxlength="100"><br>
-        Subtítulo: <input type="text" name="subtitulo" maxlength="300"><br>
-        Texto: <br><textarea name="texto" cols="90" rows="20" maxlength="5000"></textarea><br>
+    <form enctype="multipart/form-data" action="" method="POST">
+        Título: <input type="text" name="n_titulo" maxlength="100" oninput="salvarArtigo()"><br>
+        Subtítulo: <input type="text" name="n_subtitulo" maxlength="300" oninput="salvarArtigo()"><br>
+        Texto: <br><textarea name="n_texto" cols="90" rows="20" maxlength="3000"></textarea><br>
+        Imagem: <input type="file" name="n_img"><br>
         <button type="submit">Enviar</button>
     </form>
+
+    <script src="../js/cookiesArtigo.js"></script>
 </body>
 </html>
