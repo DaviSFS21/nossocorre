@@ -31,7 +31,6 @@
             $_SESSION['bairro'] = $user[9];
             $_SESSION['cidade'] = $user[10];
             $_SESSION['estado'] = $user[11];
-            $_SESSION['adm_check'] = $user[12];
             ?>
                 <script>
                     alert("Login com sucesso!");

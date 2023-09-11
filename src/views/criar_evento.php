@@ -21,7 +21,7 @@
     <form enctype="multipart/form-data" action="" method="POST">
         Nome do evento: <input type="text" name="n_nome_ev" maxlength="100" required><br><br>
         Descrição: <textarea type="text" name="n_descricao" maxlength="1200" rows="6" cols="26"></textarea><br><br>
-        Data de Início: <input type="date" name="n_data_inicio" id="data_inicio" onblur="compararDatas();" pattern="YYYY-MM-DD" min="<?= date("Y-m-d") ?>" required><br><br>
+        Data de Início: <input type="date" name="n_data_inicio" id="data_inicio" oninput="compararDatas();" pattern="YYYY-MM-DD" min="<?= date("Y-m-d") ?>" required><br><br>
         Data de Término: <input type="date" name="n_data_fim" id="data_fim" pattern="YYYY-MM-DD" min="<?= date("Y-m-d") ?>" disabled required><br><br>
         CEP: <input name="n_cep" type="text" id="cep" value="" size="10" maxlength="9"
                onblur="pesquisacep(this.value);"><br><br>

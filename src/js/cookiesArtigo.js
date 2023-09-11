@@ -23,5 +23,7 @@ function removerCookies(){
     Cookies.remove('subtitulo');
     Cookies.remove('texto');
 
-    location.reload()
+    document.querySelector("input[name=n_titulo]").value = "";
+    document.querySelector("input[name=n_subtitulo]").value = "";
+    document.querySelector("textarea").innerHTML = "";
 }

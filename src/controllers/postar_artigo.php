@@ -1,15 +1,10 @@
 <?php
-
-    require_once "../controllers/verif_session.php";
-
     if(isset($_POST['n_titulo'])){
         require '../assets/db/connect.php';
         
         $titulo = $_POST["n_titulo"];
         $subtitulo = $_POST["n_subtitulo"];
         $texto = $_POST["n_texto"];
-        
-        echo "sim";
 
         if(isset($_FILES["n_img"])){
 

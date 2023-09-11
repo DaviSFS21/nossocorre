@@ -1,4 +1,5 @@
 <?php
+    require_once "../controllers/verif_session.php";
     require_once "../assets/db/connect.php";
     require_once "../controllers/postar_artigo.php";
 ?>
