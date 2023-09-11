@@ -3,6 +3,8 @@
     require_once "verif_session.php";
 
     mysqli_query($conexao, "DELETE FROM eventos WHERE `usuario_id` = ".$_SESSION['id']);
+    mysqli_query($conexao, "DELETE FROM artigos WHERE `usuario_id` = ".$_SESSION['id']);
+    mysqli_query($conexao, "DELETE FROM musica WHERE `usuario_id` = ".$_SESSION['id']);
     mysqli_query($conexao, "DELETE FROM usuario WHERE `usuario`.`id` = ".$_SESSION['id']);
 ?>
 <script>

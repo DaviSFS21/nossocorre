@@ -16,6 +16,8 @@
     <a class="link" href="pesquisar_evento.php">Pesquisar eventos</a><br>
     <a class="link" href="postar_artigo.php">Postar um artigo</a><br>
     <a class="link" href="pesquisar_artigo.php">Pesquisar artigos</a><br>
+    <a class="link" href="postar_musica.php">Postar uma música</a><br>
+    <a class="link" href="pesquisar_música.php">Pesquisar uma música</a><br>
     <a class="link" href="editar_perfil.php">Editar perfil</a><br>
     <a class="link" href="../controllers/excluir_perfil.php">Excluir perfil</a><br>
     <a class="link" href="../controllers/exit.php">Sair</a>
@@ -47,8 +49,8 @@
                 ";
             }
         }
-
     ?>
+
     <br><br>
     <h3>Artigos</h3>
     <?php
@@ -75,7 +77,37 @@
                 ";
             }
         }
+    ?>
+    
+    <br><br>
+    <h3>Música</h3>
+    <?php
+        require_once "../assets/db/connect.php";
 
+        $result_musica = mysqli_query($conexao, "SELECT * FROM `musica` WHERE `usuario_id` = '" . $_SESSION['id'] . "'");
+        $numero_result = mysqli_num_rows($result_musica);
+
+        if($numero_result != 0){
+            for($i = 1; $i <= $numero_result; $i++){
+                $vetor_musica = mysqli_fetch_array($result_musica);
+
+                echo "
+    <div>
+        <video id='videoPlayer' width='640' height='80' controls>
+            <source src='" . $vetor_musica[5] . "' type='video/mp4'>
+        </video>
+        <p>ID: " . $vetor_musica[0] . "</p>
+        <p>Título: " . $vetor_musica[1] . "</p>
+        <p>Artista: " . $vetor_musica[4] . "</p>
+        <p>Data de lançamento: " . $vetor_musica[2] . "</p>
+        <p>Gênero: " . $vetor_musica[3] . "</p>
+        <a href='../views/editar_musica.php?id_artigo=" . $vetor_musica[0] . "'>Editar música</a>
+        <a href='../controllers/excluir_musica.php?id_artigo=" . $vetor_musica[0] . "&url_msc=" . $vetor_musica[5] . "'>Excluir música</a>
+    </div>
+    <hr>
+                ";
+            }
+        }
     ?>
 
 </body>
