@@ -17,20 +17,20 @@
                 window.location.replace("../views/perfil.php");
             </script>
             <?php
-        }/* else{
+        }else{
             ?>
             <script>
                 alert("Este artigo não existe...");
                 window.location.replace("../views/perfil.php");
             </script>
             <?php
-        } */
+        }
     }else{
-/*         ?>
+        ?>
         <script>
             alert("Este artigo não existe...");
             window.location.replace("../views/perfil.php");
         </script>
-        <?php */
+        <?php
     }
 ?>

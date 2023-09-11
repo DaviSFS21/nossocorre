@@ -42,8 +42,8 @@ CREATE TABLE `artigos` (
 --
 
 INSERT INTO `artigos` (`id`, `titulo`, `subtitulo`, `texto`, `path_img`, `data`, `usuario_id`) VALUES
-(7, 'Sim', 'Positivo', 'aaaaa', '../assets/img/img_artigos/64fc8a91c5235.jpg', '2023-09-09', 4),
-(8, 'Sim2', 'Positivo2', 'aaaaa2', '../assets/img/img_artigos/64fc8afa26819.png', '2023-09-09', 4);
+(7, 'Sim', 'Positivo', 'aaaaa', '../assets/media/img_artigos/64fc8a91c5235.jpg', '2023-09-09', 4),
+(8, 'Sim2', 'Positivo2', 'aaaaa2', '../assets/media/img_artigos/64fc8afa26819.png', '2023-09-09', 4);
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `eventos` (
 --
 
 INSERT INTO `eventos` (`id`, `nome_ev`, `descricao`, `data_inicio`, `data_fim`, `cep`, `rua`, `bairro`, `cidade`, `estado`, `path_img`, `usuario_id`) VALUES
-(1, 'Festa no Putim', 'sim', '2020-12-31', '2034-03-12', '12228000', 'Avenida João Rodolfo Castelli', 'bairro', 'São José dos Campos', 'SP', '../assets/img/img_eventos/generico.png', 4);
+(1, 'Festa no Putim', 'sim', '2020-12-31', '2034-03-12', '12228000', 'Avenida João Rodolfo Castelli', 'bairro', 'São José dos Campos', 'SP', '../assets/media/img_eventos/generico.png', 4);
 
 -- --------------------------------------------------------
 

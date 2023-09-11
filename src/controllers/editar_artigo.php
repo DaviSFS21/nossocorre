@@ -29,7 +29,7 @@
     
                 /* Declaração do novo caminho da imagem e criação do uniqid() para mudar o local da imagem, 
                 do local temporário ao source do servidor */
-                $pasta = "../assets/img/img_artigos/";
+                $pasta = "../assets/media/img_artigos/";
                 $novoNomeImg = uniqid();
                 $extensaoImg = strtolower(pathinfo($img_artigo['name'], PATHINFO_EXTENSION));
         
