@@ -34,6 +34,7 @@
         if($numero_result != 0){
             for($i = 1; $i <= $numero_result; $i++){
                 $vetor_eventos = mysqli_fetch_array($result_eventos);
+                $data = new DateTime($vetor_eventos[3]);
 
                 echo "
     <div>
@@ -41,7 +42,7 @@
         <p>ID: " . $vetor_eventos[0] . "</p>
         <p>Nome do evento: " . $vetor_eventos[1] . "</p>
         <p>Descrição: " . $vetor_eventos[2] . "</p>
-        <p>Início: " . $vetor_eventos[3] . "</p>
+        <p>Início: " . $data->format('d/m/Y') . "</p>
         <a href='../views/editar_evento.php?id_evento=" . $vetor_eventos[0] . "'>Editar evento</a>
         <a href='../controllers/excluir_evento.php?id_evento=" . $vetor_eventos[0] . "&url_img=" . $vetor_eventos[10]. "'>Excluir evento</a>
     </div>
@@ -62,11 +63,13 @@
         if($numero_result != 0){
             for($i = 1; $i <= $numero_result; $i++){
                 $vetor_artigos = mysqli_fetch_array($result_artigos);
+                $data = new DateTime($vetor_artigos[5]);
 
                 echo "
     <div>
         <img src=" . $vetor_artigos[4] . " height=250px> 
         <p>ID: " . $vetor_artigos[0] . "</p>
+        <p>Data: " . $data->format('d/m/Y') . "</p>
         <p>Título: " . $vetor_artigos[1] . "</p>
         <p>Subtítulo: " . $vetor_artigos[2] . "</p>
         <p>" . $vetor_artigos[3] . "</p>
@@ -90,6 +93,7 @@
         if($numero_result != 0){
             for($i = 1; $i <= $numero_result; $i++){
                 $vetor_musica = mysqli_fetch_array($result_musica);
+                $data = new DateTime($vetor_musica[2]);
 
                 echo "
     <div>
@@ -99,7 +103,7 @@
         <p>ID: " . $vetor_musica[0] . "</p>
         <p>Título: " . $vetor_musica[1] . "</p>
         <p>Artista: " . $vetor_musica[4] . "</p>
-        <p>Data de lançamento: " . $vetor_musica[2] . "</p>
+        <p>Data: " . $data->format('d/m/Y') . "</p>
         <p>Gênero: " . $vetor_musica[3] . "</p>
         <a href='../views/editar_musica.php?id_artigo=" . $vetor_musica[0] . "'>Editar música</a>
         <a href='../controllers/excluir_musica.php?id_artigo=" . $vetor_musica[0] . "&url_msc=" . $vetor_musica[5] . "'>Excluir música</a>

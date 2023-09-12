@@ -63,7 +63,7 @@
 
         mysqli_query($conexao, "INSERT INTO 
         `musica`(`titulo`, `data_lanc`, `genero`, `artista`, `path_msc`,`usuario_id`) 
-        VALUES ('$titulo',(CURDATE()),'$genero',,'".$_SESSION['nome']."''$path_msc','".$_SESSION['id']."')");
+        VALUES ('$titulo',(CURDATE()),'$genero','".$_SESSION['nome']."','$path_msc','".$_SESSION['id']."')");
 
         ?>
         <script>
