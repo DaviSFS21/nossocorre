@@ -23,15 +23,15 @@
             $subtitulo = $_POST['a_subtitulo'];
             $texto = $_POST['a_texto'];
 
-            if(isset($_POST["a_img"])){
+            if(isset($_FILES["a_img"])){
 
                 $img_artigo = $_FILES['a_img'];
     
                 /* Declaração do novo caminho da imagem e criação do uniqid() para mudar o local da imagem, 
                 do local temporário ao source do servidor */
                 $pasta = "../assets/media/img_artigos/";
-                $novoNomeImg = uniqid();
-                $extensaoImg = strtolower(pathinfo($img_artigo['name'], PATHINFO_EXTENSION));
+                $novo_nome_img = uniqid();
+                $extensao_img = strtolower(pathinfo($img_artigo['name'], PATHINFO_EXTENSION));
         
                 /* Condições caso o upload sofra um erro, caso a extensão seja a errada, ou, caso a imagem seja muito pesada */
                 if($img_artigo['error']){
@@ -45,7 +45,7 @@
                     die();
                 }
         
-                if($extensaoImg != 'jpg' && $extensaoImg != 'png'){
+                if($extensao_img != 'jpg' && $extensao_img != 'png'){
                     ?>
                     <script>
                         alert("Extensão não permitida...(Somente .jpg ou .png)");
@@ -68,7 +68,7 @@
                 unlink($_GET['url_img']);
     
                 /* Concatenando o novo caminho da imagem. */
-                $path_img = $pasta . $novoNomeImg . "." . $extensaoImg;    
+                $path_img = $pasta . $novo_nome_img . "." . $extensao_img;    
                 move_uploaded_file($img_artigo['tmp_name'], $path_img);
 
                 mysqli_query($conexao, "UPDATE `artigos` SET `path_img`='$path_img' WHERE `id` = $id_artigo");
@@ -86,7 +86,7 @@
         }else{
             ?>
                 <script>
-                    alert("Este Artigo não existe...");
+                    alert("Este artigo não existe...");
                     window.location.replace("perfil.php");
                 </script>
             <?php

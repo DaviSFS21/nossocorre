@@ -1,7 +1,7 @@
 <?php
     require_once "../controllers/verif_session.php";
     require_once "../assets/db/connect.php";
-    require_once "../controllers/postar_musica.php";
+    require_once "../controllers/editar_musica.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
