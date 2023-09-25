@@ -1,5 +1,5 @@
 <?php
-    require_once "../controllers/cadastro.php"
+    require_once "../controllers/cadastro.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
