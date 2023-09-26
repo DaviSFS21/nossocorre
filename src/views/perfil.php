@@ -44,7 +44,8 @@
         <p>Descrição: " . $vetor_eventos[2] . "</p>
         <p>Início: " . $data->format('d/m/Y') . "</p>
         <a href='../views/editar_evento.php?id_evento=" . $vetor_eventos[0] . "'>Editar evento</a>
-        <a href='../controllers/excluir_evento.php?id_evento=" . $vetor_eventos[0] . "&url_img=" . $vetor_eventos[10]. "'>Excluir evento</a>
+        <a href='../controllers/excluir_evento.php?id_evento=" . $vetor_eventos[0] . "&url_img=" . $vetor_eventos[10]. "'
+        onclick=\"return confirm('Tem certeza que deseja deletar este evento?')\">Excluir evento</a>
     </div>
     <hr>
                 ";
@@ -74,7 +75,8 @@
         <p>Subtítulo: " . $vetor_artigos[2] . "</p>
         <p>" . $vetor_artigos[3] . "</p>
         <a href='../views/editar_artigo.php?id_artigo=" . $vetor_artigos[0] . "'>Editar artigo</a>
-        <a href='../controllers/excluir_artigo.php?id_artigo=" . $vetor_artigos[0] . "&url_img=" . $vetor_artigos[4] . "'>Excluir artigo</a>
+        <a href='../controllers/excluir_artigo.php?id_artigo=" . $vetor_artigos[0] . "&url_img=" . $vetor_artigos[4] . "'
+        onclick=\"return confirm('Tem certeza que deseja deletar este artigo?')\">Excluir artigo</a>
     </div>
     <hr>
                 ";
@@ -105,8 +107,9 @@
         <p>Artista: " . $vetor_musica[4] . "</p>
         <p>Data: " . $data->format('d/m/Y') . "</p>
         <p>Gênero: " . $vetor_musica[3] . "</p>
-        <a href='../views/editar_musica.php?id_musica=" . $vetor_musica[0] . "' onclick=\"return confirm('Tem certeza que deseja deletar este registro?')\">Editar música</a>
-        <a href='../controllers/excluir_musica.php?id_musica=" . $vetor_musica[0] . "&url_msc=" . $vetor_musica[5] . "'>Excluir música</a>
+        <a href='../views/editar_musica.php?id_musica=" . $vetor_musica[0] . "'>Editar música</a>
+        <a href='../controllers/excluir_musica.php?id_musica=" . $vetor_musica[0] . "&url_msc=" . $vetor_musica[5] . "'
+        onclick=\"return confirm('Tem certeza que deseja excluir " . $vetor_musica[1] . "?')\">Excluir música</a>
     </div>
     <hr>
                 ";
