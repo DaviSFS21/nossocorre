@@ -105,8 +105,8 @@
         <p>Artista: " . $vetor_musica[4] . "</p>
         <p>Data: " . $data->format('d/m/Y') . "</p>
         <p>Gênero: " . $vetor_musica[3] . "</p>
-        <a href='../views/editar_musica.php?id_artigo=" . $vetor_musica[0] . "'>Editar música</a>
-        <a href='../controllers/excluir_musica.php?id_artigo=" . $vetor_musica[0] . "&url_msc=" . $vetor_musica[5] . "'>Excluir música</a>
+        <a href='../views/editar_musica.php?id_musica=" . $vetor_musica[0] . "' onclick=\"return confirm('Tem certeza que deseja deletar este registro?')\">Editar música</a>
+        <a href='../controllers/excluir_musica.php?id_musica=" . $vetor_musica[0] . "&url_msc=" . $vetor_musica[5] . "'>Excluir música</a>
     </div>
     <hr>
                 ";
