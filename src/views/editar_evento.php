@@ -29,7 +29,7 @@
         Imagem do evento: <input type="file" name="a_img"><br><br>
 
         Não se esqueça de de inserir a imagem!
-        <button type="submit">Atualizar evento</button>
+        <button type="submit" onclick="return confirm('Tem certeza que editar esse evento?')">Atualizar evento</button>
     </form>
 
     <!-- Adicionando Javascript -->

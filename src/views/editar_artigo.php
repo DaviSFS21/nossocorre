@@ -22,7 +22,7 @@
         Imagem: <input type="file" name="a_img"><br>
 
         Não se esqueça de reinserir a imagem!
-        <button type="submit">Atualizar artigo</button>
+        <button type="submit" onclick="return confirm('Tem certeza que editar essa artigo?')">Atualizar artigo</button>
     </form>
 
     <!-- Adicionando Javascript -->
